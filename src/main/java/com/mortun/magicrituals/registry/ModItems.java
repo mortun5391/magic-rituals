@@ -17,7 +17,11 @@ public final class ModItems {
             DeferredRegister.createItems(MagicRituals.MODID);
 
     public static final DeferredItem<BlockItem> CHALK_RUNE =
-            ITEMS.registerSimpleBlockItem("chalk_rune_block", ModBlocks.CHALK_RUNE);
+            ITEMS.registerSimpleBlockItem("chalk_rune", ModBlocks.CHALK_RUNE);
+
+
+    public static final DeferredItem<BlockItem> CHALK_RUNE_GOLD =
+            ITEMS.registerSimpleBlockItem("chalk_rune_gold", ModBlocks.CHALK_RUNE_GOLD);
 
     private ModItems() {
     }

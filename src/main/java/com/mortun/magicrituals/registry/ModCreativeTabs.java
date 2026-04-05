@@ -24,7 +24,10 @@ public final class ModCreativeTabs {
                     .title(Component.translatable("itemGroup.magicrituals.main"))
                     .withTabsBefore(CreativeModeTabs.COMBAT)
                     .icon(() -> ModItems.CHALK_RUNE.get().getDefaultInstance())
-                    .displayItems((parameters, output) -> output.accept(ModItems.CHALK_RUNE.get()))
+                    .displayItems((parameters, output) -> {
+                        output.accept(ModItems.CHALK_RUNE.get());
+                        output.accept(ModItems.CHALK_RUNE_GOLD.get());
+                    })
                     .build());
 
     private ModCreativeTabs() {

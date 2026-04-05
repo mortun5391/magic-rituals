@@ -1,0 +1,17 @@
+{
+  "parent": "minecraft:block/block",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "top": "magicrituals:block/chalk_rune_white",
+    "particle": "magicrituals:block/chalk_rune_white"
+  },
+  "elements": [
+    {
+      "from": [0, 0.01, 0],
+      "to": [16, 0.11, 16],
+      "faces": {
+        "up": { "texture": "#top", "uv": [0, 0, 16, 16] }
+      }
+    }
+  ]
+}

@@ -2,6 +2,7 @@ package com.mortun.magicrituals.registry;
 
 import com.mortun.magicrituals.MagicRituals;
 import com.mortun.magicrituals.block.ChalkRuneBlock;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.neoforge.registries.DeferredBlock;
@@ -19,10 +20,22 @@ public final class ModBlocks {
             DeferredRegister.createBlocks(MagicRituals.MODID);
 
     public static final DeferredBlock<ChalkRuneBlock> CHALK_RUNE = BLOCKS.registerBlock(
-            "chalk_rune_block",
+            "chalk_rune",
             ChalkRuneBlock::new,
             () -> BlockBehaviour.Properties.of()
                     .noCollision()
+                    .noOcclusion()
+                    .instabreak()
+                    .sound(SoundType.WOOL)
+    );
+
+
+    public static final DeferredBlock<ChalkRuneBlock> CHALK_RUNE_GOLD = BLOCKS.registerBlock(
+            "chalk_rune_gold",
+            ChalkRuneBlock::new,
+            () -> BlockBehaviour.Properties.of()
+                    .noCollision()
+                    .noOcclusion()
                     .instabreak()
                     .sound(SoundType.WOOL)
     );
