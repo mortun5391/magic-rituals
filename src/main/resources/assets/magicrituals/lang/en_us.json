@@ -1,0 +1,13 @@
+{
+  "itemGroup.magicrituals.main": "Magic Rituals",
+  "block.magicrituals.chalk_rune_block": "Chalk Rune",
+  "item.magicrituals.chalk_rune_block": "Chalk Rune",
+
+  "magicrituals.configuration.title": "Magic Rituals Configs",
+  "magicrituals.configuration.section.magicrituals.common.toml": "Magic Rituals Configs",
+  "magicrituals.configuration.section.magicrituals.common.toml.title": "Magic Rituals Configs",
+  "magicrituals.configuration.items": "Item List",
+  "magicrituals.configuration.logDirtBlock": "Log Dirt Block",
+  "magicrituals.configuration.magicNumberIntroduction": "Magic Number Text",
+  "magicrituals.configuration.magicNumber": "Magic Number"
+}
