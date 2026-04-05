@@ -1,25 +1,33 @@
+# Magic Rituals
 
-Installation information
-=======
+`Magic Rituals` is a NeoForge mod for Minecraft `1.21.11` centered around magical patterns built from chalk runes.
 
-This template repository can be directly cloned to get you started with a new
-mod. Simply create a new repository cloned from this one, by following the
-instructions provided by [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+At the moment the mod is an early prototype with one fully working ritual and the basic system for matching ritual patterns in the world.
 
-Once you have your clone, simply open the repository in the IDE of your choice. The usual recommendation for an IDE is either IntelliJ IDEA or Eclipse.
+## Current functionality
 
-If at any point you are missing libraries in your IDE, or you've run into problems you can
-run `gradlew --refresh-dependencies` to refresh the local cache. `gradlew clean` to reset everything 
-{this does not affect your code} and then start the process again.
+- Two rune blocks are available: a regular chalk rune and a golden central rune.
+- Rituals are assembled directly in the world from a fixed block pattern.
+- Right click a rune with an empty hand to attempt ritual activation.
+- If the pattern does not match, the mod returns debug information about the first mismatch.
 
-Mapping Names:
-============
-By default, the MDK is configured to use the official mapping names from Mojang for methods and fields 
-in the Minecraft codebase. These names are covered by a specific license. All modders should be aware of this
-license. For the latest license text, refer to the mapping file itself, or the reference copy here:
-https://github.com/NeoForged/NeoForm/blob/main/Mojang.md
+## Implemented ritual
 
-Additional Resources: 
-==========
-Community Documentation: https://docs.neoforged.net/  
-NeoForged Discord: https://discord.neoforged.net/
+### Cross ritual
+
+The current ritual uses:
+
+- 1 golden rune in the center
+- 4 regular chalk runes in a cross shape at distance 2
+- Water placed in a ring around the center one block lower
+
+When the structure is assembled correctly and activated, the ritual:
+
+- removes the surrounding water blocks
+- starts rain in the world
+
+## Screenshot
+
+Example of the currently implemented ritual:
+
+![Cross ritual](docs/cross-ritual.png)
