@@ -53,18 +53,12 @@ Example of the Raincaller ritual:
 
 ### Raincaller activation
 
-<video controls>
-  <source src="docs/raincaller.mp4" type="video/mp4">
-</video>
+![Raincaller activation](docs/raincaller.gif)
 
 ### Clear Skies activation
 
-<video controls>
-  <source src="docs/clearskies.mp4" type="video/mp4">
-</video>
+![Clear Skies activation](docs/clearskies.gif)
 
 ### Ritual failure
 
-<video controls>
-  <source src="docs/ritual_failure.mp4" type="video/mp4">
-</video>
+![Ritual failure](docs/ritual_failure.gif)
