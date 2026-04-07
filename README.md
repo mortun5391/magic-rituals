@@ -47,4 +47,10 @@ Effect:
 
 Example of the Raincaller ritual:
 
-![Raincaller ritual](docs/cross-ritual.png)
+![Raincaller ritual](docs/rituals.png)
+
+## Ritual activation demo
+
+<video controls>
+  <source src="docs/ritual_activation.mp4" type="video/mp4">
+</video>
