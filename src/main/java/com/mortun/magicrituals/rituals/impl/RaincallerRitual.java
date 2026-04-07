@@ -1,22 +1,25 @@
 package com.mortun.magicrituals.rituals.impl;
 
+import com.mortun.magicrituals.MagicRituals;
 import com.mortun.magicrituals.registry.ModBlocks;
 import com.mortun.magicrituals.rituals.Ritual;
+import com.mortun.magicrituals.rituals.RitualIngredient;
 import com.mortun.magicrituals.rituals.RitualPattern;
+import com.mortun.magicrituals.rituals.RitualRecipe;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 
+import java.util.List;
 import java.util.Map;
 
-public final class CrossRitual implements Ritual {
+public final class RaincallerRitual implements Ritual {
     @Override
     public String id() {
-        return "cross";
+        return "raincaller";
     }
 
     @Override
@@ -38,13 +41,23 @@ public final class CrossRitual implements Ritual {
         ));
     }
 
-
+    @Override
+    public RitualRecipe recipe() {
+        return new RitualRecipe(List.of(
+                new RitualIngredient(Items.PRISMARINE_SHARD, 4),
+                new RitualIngredient(Items.KELP, 8),
+                new RitualIngredient(Items.NAUTILUS_SHELL, 1)
+        ));
+    }
 
     @Override
     public void execute(Level level, BlockPos center, Player player) {
         for (int dx = -1; dx <= 1; ++dx) {
             for (int dz = -1; dz <= 1; ++dz) {
-                if (dx == 0 && dz == 0) continue;
+                if (dx == 0 && dz == 0) {
+                    continue;
+                }
+
                 BlockPos targetPos = center.offset(dx, -1, dz);
                 if (level.getBlockState(targetPos).is(Blocks.WATER)) {
                     level.setBlock(targetPos, Blocks.AIR.defaultBlockState(), 3);
@@ -54,11 +67,7 @@ public final class CrossRitual implements Ritual {
 
         if (level instanceof ServerLevel serverLevel) {
             serverLevel.setWeatherParameters(0, 12000, true, false);
-        }
-
-        if (player instanceof ServerPlayer serverPlayer) {
-            serverPlayer.sendSystemMessage(Component.literal("Cross ritual execute() called"));
+            MagicRituals.LOGGER.info("Executed ritual {} at {} in {}", id(), center, serverLevel.dimension());
         }
     }
-
 }

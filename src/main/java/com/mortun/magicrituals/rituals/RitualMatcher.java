@@ -2,17 +2,21 @@ package com.mortun.magicrituals.rituals;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public final class RitualMatcher {
     private RitualMatcher() {
     }
 
-    public static boolean matches(Level level, BlockPos center, RitualPattern pattern) {
+    public static boolean structureMatches(Level level, BlockPos center, RitualPattern pattern) {
         for (Map.Entry<BlockPos, Block> entry : pattern.requiredBlocks().entrySet()) {
             BlockPos targetPos = center.offset(entry.getKey());
             if (!level.getBlockState(targetPos).is(entry.getValue())) {
@@ -21,6 +25,27 @@ public final class RitualMatcher {
         }
 
         return true;
+    }
+
+    public static boolean recipeMatches(List<ItemEntity> itemEntities, RitualRecipe recipe) {
+        return "Recipe matched".equals(describeRecipeMismatch(itemEntities, recipe));
+    }
+
+    public static String describeRecipeMismatch(List<ItemEntity> itemEntities, RitualRecipe recipe) {
+        Map<Item, Integer> foundItems = new HashMap<>();
+        for (var itemEntity : itemEntities) {
+            foundItems.merge(itemEntity.getItem().getItem(), itemEntity.getItem().getCount(), Integer::sum);
+        }
+
+        for (RitualIngredient ingredient : recipe.ingredients()) {
+            int foundCount = foundItems.getOrDefault(ingredient.item(), 0);
+            if (foundCount < ingredient.count()) {
+                String itemId = BuiltInRegistries.ITEM.getKey(ingredient.item()).toString();
+                return "Missing ingredient " + itemId + " x" + ingredient.count() + ", found " + foundCount;
+            }
+        }
+
+        return "Recipe matched";
     }
 
     public static String describeFirstMismatch(Level level, BlockPos center, RitualPattern pattern) {

@@ -4,11 +4,13 @@ import com.mortun.magicrituals.registry.ModBlockTypes;
 import com.mortun.magicrituals.registry.ModBlocks;
 import com.mortun.magicrituals.registry.ModCreativeTabs;
 import com.mortun.magicrituals.registry.ModItems;
+import com.mortun.magicrituals.rituals.ActiveRitualManager;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
 
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -18,6 +20,7 @@ import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
+import net.neoforged.neoforge.event.tick.LevelTickEvent;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(MagicRituals.MODID)
@@ -65,5 +68,12 @@ public class MagicRituals {
     public void onServerStarting(ServerStartingEvent event) {
         // Do something when the server starts
         LOGGER.info("HELLO from server starting");
+    }
+
+    @SubscribeEvent
+    public void onLevelTick(LevelTickEvent.Post event) {
+        if (event.getLevel() instanceof ServerLevel serverLevel) {
+            ActiveRitualManager.tick(serverLevel);
+        }
     }
 }

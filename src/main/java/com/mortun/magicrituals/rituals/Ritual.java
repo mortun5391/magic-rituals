@@ -9,5 +9,7 @@ public interface Ritual {
 
     RitualPattern pattern();
 
+    RitualRecipe recipe();
+
     void execute(Level level, BlockPos center, Player player);
 }
