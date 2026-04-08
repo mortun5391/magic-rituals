@@ -4,6 +4,7 @@ import com.mortun.magicrituals.registry.ModBlockTypes;
 import com.mortun.magicrituals.registry.ModBlocks;
 import com.mortun.magicrituals.registry.ModCreativeTabs;
 import com.mortun.magicrituals.registry.ModItems;
+import com.mortun.magicrituals.knowledge.KnowledgeRegistry;
 import com.mortun.magicrituals.rituals.ActiveRitualManager;
 import org.slf4j.Logger;
 
@@ -48,6 +49,9 @@ public class MagicRituals {
 
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+
+        // Ensure knowledge registry is loaded
+        KnowledgeRegistry.init();
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
