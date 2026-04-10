@@ -38,3 +38,7 @@ run/
 **/src/generated/**/.cache/
 repo/
 !**/src/**/repo/
+
+### Local Design Docs ###
+docs/mod-vision.md
+docs/early-game-roadmap.md

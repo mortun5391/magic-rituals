@@ -1,6 +1,5 @@
 package com.mortun.magicrituals.research;
 
-import com.mortun.magicrituals.knowledge.KnowledgeId;
 import net.minecraft.resources.Identifier;
 
 import java.util.Objects;
@@ -12,7 +11,7 @@ import java.util.Objects;
  * @version 1.0
  * @since 2026-04-08
  */
-public class ResearchEntryId {
+public final class ResearchEntryId {
     private final Identifier id;
 
     private ResearchEntryId(Identifier id) {

@@ -27,6 +27,16 @@ public final class ModCreativeTabs {
                     .displayItems((parameters, output) -> {
                         output.accept(ModItems.CHALK_RUNE.get());
                         output.accept(ModItems.CHALK_RUNE_GOLD.get());
+                        output.accept(ModItems.VEIL_DUST.get());
+                        output.accept(ModItems.ECHO_SHARD.get());
+                        output.accept(ModItems.TRACE_RESIN.get());
+                        output.accept(ModItems.CHALK_SLATE.get());
+                        output.accept(ModItems.GUIDE_TO_THE_VEIL.get());
+                        output.accept(ModItems.TRACE_NEEDLE.get());
+                        output.accept(ModItems.RAW_FLOW_TRACE.get());
+                        output.accept(ModItems.RAW_HEAT_TRACE.get());
+                        output.accept(ModItems.SETTLED_FLOW_ESSENCE.get());
+                        output.accept(ModItems.SETTLED_HEAT_ESSENCE.get());
                     })
                     .build());
 

@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "magicrituals:block/chalk_rune_gold" }
+    "": {
+      "model": "magicrituals:block/chalk_rune_gold"
+    }
   }
 }
