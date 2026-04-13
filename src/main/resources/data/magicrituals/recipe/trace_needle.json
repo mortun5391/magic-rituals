@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "IV ",
+    "VIV",
+    " VE"
+  ],
+  "key": {
+    "I": "minecraft:iron_ingot",
+    "V": "magicrituals:veil_dust",
+    "E": "magicrituals:echo_shard"
+  },
+  "result": {
+    "count": 1,
+    "id": "magicrituals:trace_needle"
+  }
+}

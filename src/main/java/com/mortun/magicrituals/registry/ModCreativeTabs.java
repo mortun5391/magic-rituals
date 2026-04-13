@@ -31,12 +31,16 @@ public final class ModCreativeTabs {
                         output.accept(ModItems.ECHO_SHARD.get());
                         output.accept(ModItems.TRACE_RESIN.get());
                         output.accept(ModItems.CHALK_SLATE.get());
+                        output.accept(ModItems.CHALK_BASE.get());
+                        output.accept(ModItems.RITUAL_CHALK.get());
+                        output.accept(ModItems.GOLDEN_RITUAL_CHALK.get());
                         output.accept(ModItems.GUIDE_TO_THE_VEIL.get());
                         output.accept(ModItems.TRACE_NEEDLE.get());
                         output.accept(ModItems.RAW_FLOW_TRACE.get());
                         output.accept(ModItems.RAW_HEAT_TRACE.get());
                         output.accept(ModItems.SETTLED_FLOW_ESSENCE.get());
                         output.accept(ModItems.SETTLED_HEAT_ESSENCE.get());
+
                     })
                     .build());
 

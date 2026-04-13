@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "magicrituals:item/settled_heat_essence"
-  }
-}

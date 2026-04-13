@@ -1,7 +1,9 @@
 package com.mortun.magicrituals.registry;
 
 import com.mortun.magicrituals.MagicRituals;
+import com.mortun.magicrituals.item.GoldenRitualChalk;
 import com.mortun.magicrituals.item.GuideToTheVeil;
+import com.mortun.magicrituals.item.RitualChalk;
 import com.mortun.magicrituals.item.TraceNeedle;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -36,6 +38,21 @@ public final class ModItems {
 
     public static final DeferredItem<Item> CHALK_SLATE =
             simple("chalk_slate");
+
+    public static final DeferredItem<Item> CHALK_BASE =
+            simple("chalk_base");
+
+    public static final DeferredItem<RitualChalk> RITUAL_CHALK = item(
+            "ritual_chalk",
+            RitualChalk::new,
+            properties -> properties.stacksTo(64)
+    );
+
+    public static final DeferredItem<GoldenRitualChalk> GOLDEN_RITUAL_CHALK = item(
+            "golden_ritual_chalk",
+            GoldenRitualChalk::new,
+            properties -> properties.stacksTo(64)
+    );
 
     public static final DeferredItem<GuideToTheVeil> GUIDE_TO_THE_VEIL = item(
             "guide_to_the_veil",

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:book",
+    "magicrituals:veil_dust",
+    "magicrituals:echo_shard"
+  ],
+  "result": {
+    "count": 1,
+    "id": "magicrituals:guide_to_the_veil"
+  }
+}
