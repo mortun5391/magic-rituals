@@ -45,13 +45,13 @@ public final class ModItems {
     public static final DeferredItem<RitualChalk> RITUAL_CHALK = item(
             "ritual_chalk",
             RitualChalk::new,
-            properties -> properties.stacksTo(64)
+            properties -> properties.stacksTo(1).durability(50)
     );
 
     public static final DeferredItem<GoldenRitualChalk> GOLDEN_RITUAL_CHALK = item(
             "golden_ritual_chalk",
             GoldenRitualChalk::new,
-            properties -> properties.stacksTo(64)
+            properties -> properties.stacksTo(1).durability(10)
     );
 
     public static final DeferredItem<GuideToTheVeil> GUIDE_TO_THE_VEIL = item(

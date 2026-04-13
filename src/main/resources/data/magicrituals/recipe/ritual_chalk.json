@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "BV ",
+    "VB ",
+    "  B"
+  ],
+  "key": {
+    "B": "magicrituals:chalk_base",
+    "V": "magicrituals:veil_dust"
+  },
+  "result": {
+    "count": 1,
+    "id": "magicrituals:ritual_chalk"
+  }
+}

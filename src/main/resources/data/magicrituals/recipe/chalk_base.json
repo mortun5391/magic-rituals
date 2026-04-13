@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "SSS",
+    "SLS",
+    "SSS"
+  ],
+  "key": {
+    "S": "magicrituals:chalk_slate",
+    "L": "minecraft:lava_bucket"
+  },
+  "result": {
+    "count": 1,
+    "id": "magicrituals:chalk_base"
+  }
+}

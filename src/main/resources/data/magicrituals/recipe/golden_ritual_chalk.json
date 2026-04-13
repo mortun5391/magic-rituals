@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "BV ",
+    "VBG",
+    " GB"
+  ],
+  "key": {
+    "B": "magicrituals:chalk_base",
+    "V": "magicrituals:veil_dust",
+    "G": "minecraft:gold_nugget"
+  },
+  "result": {
+    "count": 1,
+    "id": "magicrituals:golden_ritual_chalk"
+  }
+}

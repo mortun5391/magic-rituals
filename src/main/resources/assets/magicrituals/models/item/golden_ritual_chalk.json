@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "magicrituals:item/golden_ritual_chalk"
+  }
+}

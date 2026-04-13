@@ -1,64 +1,37 @@
 # Magic Rituals
 
-`Magic Rituals` is a NeoForge mod for Minecraft `1.21.11` centered around magical patterns built from chalk runes.
+`Magic Rituals` is a NeoForge mod for Minecraft `1.21.11` focused on chalk-drawn ritual patterns and staged activations in the world.
 
-At the moment the mod is an early prototype with a working ritual system, item-based ritual recipes, staged activation, particles, sounds, and two implemented rituals.
+## Current state
 
-## Current functionality
+- Working ritual system with pattern + item-recipe matching.
+- Ritual activation on the golden rune with empty hand.
+- Staged item absorption, particles, sounds, and failure handling.
+- Two rituals implemented: Raincaller and Clear Skies.
+- Core early-game items, textures, and recipes are in place.
 
-- Two rune blocks are available: a regular chalk rune and a golden central rune.
-- Rituals are assembled directly in the world from a block pattern plus an item recipe.
-- Rituals are activated by right-clicking the golden rune with an empty hand.
-- After validation, recipe items are absorbed one by one over time before the ritual completes.
-- If the structure breaks or an item disappears during absorption, the ritual is cancelled and absorbed items are dropped back.
-- Ritual actions are accompanied by particles and sounds.
-- Activation/debug details are logged on the server; players receive short red failure messages in-game.
+## Blocks
 
-## Implemented rituals
+![Chalk Rune](src/main/resources/assets/magicrituals/textures/block/chalk_rune_white.png) Chalk Rune  
+![Golden Chalk Rune](src/main/resources/assets/magicrituals/textures/block/chalk_rune_gold.png) Golden Chalk Rune
 
-### Raincaller ritual
+## Items
 
-Uses:
+![Veil Dust](src/main/resources/assets/magicrituals/textures/item/veil_dust.png) Veil Dust  
+![Echo Shard](src/main/resources/assets/magicrituals/textures/item/echo_shard.png) Echo Shard  
+![Trace Resin](src/main/resources/assets/magicrituals/textures/item/trace_resin.png) Trace Resin  
+![Chalk Slate](src/main/resources/assets/magicrituals/textures/item/chalk_slate.png) Chalk Slate  
+![Chalk Base](src/main/resources/assets/magicrituals/textures/item/chalk_base.png) Chalk Base  
+![Ritual Chalk](src/main/resources/assets/magicrituals/textures/item/chalk_rune.png) Ritual Chalk  
+![Golden Ritual Chalk](src/main/resources/assets/magicrituals/textures/item/chalk_rune_gold.png) Golden Ritual Chalk  
+![Guide to the Veil](src/main/resources/assets/magicrituals/textures/item/guide_to_the_veil.png) Guide to the Veil  
+![Trace Needle](src/main/resources/assets/magicrituals/textures/item/trace_needle.png) Trace Needle  
+![Raw Flow Trace](src/main/resources/assets/magicrituals/textures/item/raw_flow_trace.png) Raw Flow Trace  
+![Raw Heat Trace](src/main/resources/assets/magicrituals/textures/item/raw_heat_trace.png) Raw Heat Trace  
+![Settled Flow Essence](src/main/resources/assets/magicrituals/textures/item/settled_flow_essence.png) Settled Flow Essence  
+![Settled Heat Essence](src/main/resources/assets/magicrituals/textures/item/settled_heat_essence.png) Settled Heat Essence
 
-- 1 golden rune in the center
-- 4 regular chalk runes in a cross shape at distance 2
-- Water placed in a ring around the center one block lower
-- Recipe: `4x Prismarine Shard`, `8x Kelp`, `1x Nautilus Shell`
+## Rituals
 
-Effect:
-
-- removes the surrounding water blocks
-- starts rain in the world
-
-### Clear Skies ritual
-
-Uses:
-
-- 1 golden rune in the center
-- 8 regular chalk runes around it in a `3x3` ring
-- A full `3x3` layer of magma blocks under the ritual
-- Recipe: `4x Blaze Powder`, `8x Glowstone Dust`, `2x Sunflower`
-
-Effect:
-
-- clears rain and thunder
-
-## Screenshot
-
-Example of the Raincaller ritual:
-
-![Raincaller ritual](docs/rituals.png)
-
-## Ritual demos
-
-### Raincaller activation
-
-![Raincaller activation](docs/raincaller.gif)
-
-### Clear Skies activation
-
-![Clear Skies activation](docs/clearskies.gif)
-
-### Ritual failure
-
-![Ritual failure](docs/ritual_failure.gif)
+- Raincaller: consumes a water-based pattern and item recipe to start rain.
+- Clear Skies: consumes a heat-based pattern and item recipe to clear weather.
